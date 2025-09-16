@@ -264,6 +264,7 @@ end
 --[[ Event processing ]]
 
 function ItemRack.ProcessingFrameOnEvent(self,event)
+  	if UnitAffectingCombat("player") then return end
 	local enabled = ItemRackUser.Events.Enabled
 	local events = ItemRackEvents
 	local startBuff, startZone, startStance, eventType
@@ -303,6 +304,7 @@ function ItemRack.GetStanceNumber(name)
 end
 
 function ItemRack.ProcessStanceEvent()
+  	if UnitAffectingCombat("player") then return end
 	local enabled = ItemRackUser.Events.Enabled
 	local events = ItemRackEvents
 
@@ -341,6 +343,7 @@ function ItemRack.ProcessStanceEvent()
 end
 
 function ItemRack.ProcessZoneEvent()
+  	if UnitAffectingCombat("player") then return end
 	local enabled = ItemRackUser.Events.Enabled
 	local events = ItemRackEvents
 
@@ -366,6 +369,7 @@ function ItemRack.ProcessZoneEvent()
 end
 
 function ItemRack.ProcessBuffEvent()
+  	if UnitAffectingCombat("player") then return end
 	local enabled = ItemRackUser.Events.Enabled
 	local events = ItemRackEvents
 
